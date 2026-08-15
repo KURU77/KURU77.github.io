@@ -18,7 +18,7 @@
 | 📚 マイ本棚 | バーコードをカメラで読むだけの蔵書管理。置き場所・ジャンル分類、読書進捗 | [開く](https://kuru77.github.io/bookshelf_app/) / [repo](https://github.com/KURU77/bookshelf_app) |
 | ⏱️ 今！やることリスト | 空き時間と気分から「今やるとよさそうなこと」を提案するタスク管理 | [開く](https://kuru77.github.io/now-todo/) / [repo](https://github.com/KURU77/now-todo) |
 | 🍚 自炊ごはん記録 | 自炊を写真で記録して栄養バランスをチェック。在庫の賞味期限管理と献立提案つき | [開く](https://kuru77.github.io/meal-log-app/) / [repo](https://github.com/KURU77/meal-log-app) |
-| 🗺️ 行きたい観光地リスト | 観光地・世界遺産を営業時間と地図つきでリスト化（**公開準備中**） | — |
+| 🗺️ 行きたい観光地リスト | 観光地・世界遺産を営業時間と地図つきでリスト化。名称を検索するだけで住所・座標が自動入力 | [開く](https://kuru77.github.io/travel-wishlist/) / [repo](https://github.com/KURU77/travel-wishlist) |
 
 ### そのほか
 
