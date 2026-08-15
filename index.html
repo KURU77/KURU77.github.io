@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KURU77 — 作ったWebアプリ一覧</title>
+<meta name="description" content="KURU77 が作った資格トラッカー・視聴リスト・所得シミュレーター・蔵書管理などのWebアプリをまとめたポートフォリオです。">
+<meta name="color-scheme" content="light dark">
+<meta property="og:title" content="KURU77 — 作ったWebアプリ一覧">
+<meta property="og:description" content="資格トラッカー・視聴リスト・所得シミュレーター・蔵書管理など、作ったWebアプリのリンクと概要のまとめ。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kuru77.github.io/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A7%B0%3C/text%3E%3C/svg%3E">
+<style>
+  :root {
+    --bg: #f7f7f5;
+    --bg-card: #ffffff;
+    --bg-subtle: #efeeea;
+    --fg: #1c1b19;
+    --fg-muted: #6b6862;
+    --fg-faint: #94918a;
+    --border: #e2e0da;
+    --border-strong: #cdcac2;
+    --accent: #b8532a;
+    --accent-fg: #ffffff;
+    --tag-bg: #efeeea;
+    --tag-fg: #56534d;
+    --shadow: 0 1px 2px rgba(28,27,25,.05), 0 6px 16px -8px rgba(28,27,25,.10);
+    --shadow-hover: 0 2px 4px rgba(28,27,25,.06), 0 14px 30px -12px rgba(28,27,25,.18);
+    --radius: 14px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #16150f;
+      --bg-card: #201f19;
+      --bg-subtle: #2a2822;
+      --fg: #f0eee7;
+      --fg-muted: #a5a196;
+      --fg-faint: #7c7870;
+      --border: #33312a;
+      --border-strong: #45423a;
+      --accent: #e08b5f;
+      --accent-fg: #201206;
+      --tag-bg: #2a2822;
+      --tag-fg: #b6b1a5;
+      --shadow: 0 1px 2px rgba(0,0,0,.3), 0 6px 16px -8px rgba(0,0,0,.5);
+      --shadow-hover: 0 2px 4px rgba(0,0,0,.35), 0 14px 30px -12px rgba(0,0,0,.6);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #16150f;
+    --bg-card: #201f19;
+    --bg-subtle: #2a2822;
+    --fg: #f0eee7;
+    --fg-muted: #a5a196;
+    --fg-faint: #7c7870;
+    --border: #33312a;
+    --border-strong: #45423a;
+    --accent: #e08b5f;
+    --accent-fg: #201206;
+    --tag-bg: #2a2822;
+    --tag-fg: #b6b1a5;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 6px 16px -8px rgba(0,0,0,.5);
+    --shadow-hover: 0 2px 4px rgba(0,0,0,.35), 0 14px 30px -12px rgba(0,0,0,.6);
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN",
+                 "Yu Gothic UI", "Yu Gothic", "Noto Sans JP", "Segoe UI", Meiryo, sans-serif;
+    font-size: 16px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; }
+
+  .wrap { max-width: 940px; margin: 0 auto; padding: 0 20px; }
+
+  /* ---------- header ---------- */
+  header { padding: 64px 0 40px; border-bottom: 1px solid var(--border); }
+  .eyebrow {
+    font-size: 12px; letter-spacing: .16em; text-transform: uppercase;
+    color: var(--fg-faint); margin: 0 0 12px; font-weight: 600;
+  }
+  h1 {
+    margin: 0 0 14px;
+    font-size: clamp(28px, 6vw, 42px);
+    line-height: 1.25; letter-spacing: -.01em; font-weight: 700;
+  }
+  h1 .at { color: var(--fg-faint); font-weight: 500; }
+  .lede { margin: 0; max-width: 62ch; color: var(--fg-muted); font-size: 16.5px; }
+  .header-links { margin: 22px 0 0; display: flex; flex-wrap: wrap; gap: 10px; }
+  .pill {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 7px 14px; border-radius: 999px;
+    border: 1px solid var(--border-strong); background: var(--bg-card);
+    color: var(--fg); text-decoration: none;
+    font-size: 14px; font-weight: 600; line-height: 1.4;
+    transition: border-color .15s, transform .15s;
+  }
+  .pill:hover { border-color: var(--accent); transform: translateY(-1px); }
+
+  /* ---------- sections ---------- */
+  section { padding: 48px 0 8px; }
+  .sec-head { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 6px; }
+  h2 { margin: 0; font-size: 21px; letter-spacing: -.01em; font-weight: 700; }
+  .sec-note { margin: 0 0 26px; color: var(--fg-muted); font-size: 14.5px; }
+  .count { color: var(--fg-faint); font-size: 13px; font-weight: 600; font-variant-numeric: tabular-nums; }
+
+  /* ---------- cards ---------- */
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 18px; }
+  .card {
+    display: flex; flex-direction: column;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 22px 22px 18px;
+    box-shadow: var(--shadow);
+    transition: box-shadow .18s, border-color .18s, transform .18s;
+  }
+  .card:hover { box-shadow: var(--shadow-hover); border-color: var(--border-strong); transform: translateY(-2px); }
+  .card-top { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
+  .ico {
+    flex: none; width: 42px; height: 42px; border-radius: 11px;
+    background: var(--bg-subtle); border: 1px solid var(--border);
+    display: grid; place-items: center; font-size: 21px; line-height: 1;
+  }
+  .card h3 { margin: 0; font-size: 17px; line-height: 1.45; letter-spacing: -.01em; font-weight: 700; }
+  .kicker { margin: 2px 0 0; font-size: 12.5px; color: var(--fg-faint); }
+  .desc { margin: 0 0 14px; font-size: 14.5px; line-height: 1.72; color: var(--fg-muted); flex: 1; }
+  .desc b { color: var(--fg); font-weight: 600; }
+
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 16px; padding: 0; list-style: none; }
+  .tags li {
+    font-size: 11.5px; font-weight: 600; letter-spacing: .01em;
+    padding: 3px 9px; border-radius: 999px;
+    background: var(--tag-bg); color: var(--tag-fg);
+  }
+
+  .actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 8px 15px; border-radius: 9px;
+    font-size: 13.5px; font-weight: 700; text-decoration: none;
+    border: 1px solid transparent; line-height: 1.4;
+    transition: opacity .15s, border-color .15s, background .15s;
+  }
+  .btn-primary { background: var(--accent); color: var(--accent-fg); }
+  .btn-primary:hover { opacity: .88; }
+  .btn-ghost { border-color: var(--border-strong); color: var(--fg-muted); }
+  .btn-ghost:hover { border-color: var(--accent); color: var(--fg); }
+  .btn-disabled {
+    border-color: var(--border); color: var(--fg-faint);
+    background: var(--bg-subtle); cursor: default;
+  }
+
+  /* ---------- compact list (archive) ---------- */
+  .list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--border); }
+  .list li {
+    display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px;
+    padding: 15px 4px; border-bottom: 1px solid var(--border);
+  }
+  .list .name { font-weight: 700; font-size: 15px; }
+  .list .name .em { margin-right: 6px; }
+  .list .sub { color: var(--fg-muted); font-size: 14px; flex: 1 1 240px; }
+  .list .lnk { display: flex; gap: 12px; font-size: 13px; font-weight: 600; }
+  .list .lnk a { color: var(--fg-muted); text-decoration: none; border-bottom: 1px solid var(--border-strong); }
+  .list .lnk a:hover { color: var(--accent); border-color: var(--accent); }
+
+  /* ---------- notes ---------- */
+  .notes {
+    margin: 8px 0 0; padding: 22px 24px;
+    background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius);
+  }
+  .notes ul { margin: 0; padding-left: 1.15em; }
+  .notes li { margin: 6px 0; font-size: 14.5px; color: var(--fg-muted); }
+  .notes li b { color: var(--fg); font-weight: 600; }
+
+  footer {
+    margin-top: 56px; padding: 28px 0 56px;
+    border-top: 1px solid var(--border);
+    color: var(--fg-faint); font-size: 13.5px;
+    display: flex; flex-wrap: wrap; gap: 10px 20px; justify-content: space-between;
+  }
+  footer a { color: var(--fg-muted); }
+
+  @media (max-width: 600px) {
+    header { padding: 44px 0 32px; }
+    .grid { grid-template-columns: 1fr; gap: 14px; }
+    section { padding: 38px 0 4px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+<header>
+  <p class="eyebrow">Web apps</p>
+  <h1>作ったWebアプリ一覧 <span class="at">/ KURU77</span></h1>
+  <p class="lede">
+    日々の「記録したい・管理したい・計算したい」を、そのつど小さなWebアプリにしてきたものの置き場です。
+    ほとんどがブラウザだけで完結し、データは端末の中にだけ保存されます（サーバー送信なし）。
+    スマホのホーム画面に追加すればアプリのように使えます。
+  </p>
+  <div class="header-links">
+    <a class="pill" href="https://github.com/KURU77">📦 GitHub: @KURU77</a>
+    <a class="pill" href="#apps">↓ アプリ一覧</a>
+  </div>
+</header>
+
+<section id="apps">
+  <div class="sec-head">
+    <h2>おもなアプリ</h2>
+    <span class="count">7件</span>
+  </div>
+  <p class="sec-note">リンクを開くとすぐに使えます（インストール不要）。</p>
+
+  <div class="grid">
+
+    <article class="card">
+      <div class="card-top">
+        <div class="ico">🎓</div>
+        <div>
+          <h3>資格・検定トラッカー</h3>
+          <p class="kicker">cert-tracker</p>
+        </div>
+      </div>
+      <p class="desc">
+        取りたい資格や検定をリスト化し、<b>目標スコアと受験記録</b>を管理するアプリ。
+        資格名を入れると<b>約550件のプリセット</b>から候補が出て、カテゴリ・目標スコア・受験料・公式サイトが自動で入ります
+        （「ぼき」「boki」「英検 準1」のような、かな・ローマ字入力でも引けます）。
+        達成率の進捗バーと試験日カウントダウンつき。
+      </p>
+      <ul class="tags"><li>HTML/CSS/JS</li><li>PWA</li><li>端末内保存</li><li>ダークモード</li></ul>
+      <div class="actions">
+        <a class="btn btn-primary" href="https://kuru77.github.io/cert-tracker/">アプリを開く</a>
+        <a class="btn btn-ghost" href="https://github.com/KURU77/cert-tracker">ソース</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-top">
+        <div class="ico">📺</div>
+        <div>
+          <h3>視聴リスト</h3>
+          <p class="kicker">watchlist — アニメ・映画・地上波</p>
+        </div>
+      </div>
+      <p class="desc">
+        観たい作品を<b>「お気に入り／放送予定／いつか見たい／見た」</b>の4つで管理。
+        タイトルを入れるかURLを貼るだけで、<b>AniList・Wikipedia／Wikidata</b>から
+        日本公開日・上映時間・監督・話数・放送局・「全何期あって今何期目か」まで取り込みます。
+        放送予定は「今日！」「あと5日」を自動表示。
+      </p>
+      <ul class="tags"><li>1ファイル構成</li><li>外部API連携</li><li>PWA</li><li>端末内保存</li></ul>
+      <div class="actions">
+        <a class="btn btn-primary" href="https://kuru77.github.io/watchlist/">アプリを開く</a>
+        <a class="btn btn-ghost" href="https://github.com/KURU77/watchlist">ソース</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-top">
+        <div class="ico">🧮</div>
+        <div>
+          <h3>所得シミュレーター</h3>
+          <p class="kicker">income-tax-simulator-jp</p>
+        </div>
+      </div>
+      <p class="desc">
+        業務委託などの所得と給与所得を入れると、<b>令和元年〜令和8年それぞれの年分の税制</b>で
+        年間の課税額を試算し、非課税枠が残っていれば<b>「あといくら稼げるか」</b>を壁ごとに出します。
+        収入は月ごとの入力に対応し、途中までの入力から「何月ごろ壁に到達するか」も試算。
+        令和8年度税制改正まで反映しています。
+      </p>
+      <ul class="tags"><li>HTML 1ファイル</li><li>依存ライブラリなし</li><li>PWA</li><li>端末内保存</li></ul>
+      <div class="actions">
+        <a class="btn btn-primary" href="https://kuru77.github.io/income-tax-simulator-jp/">アプリを開く</a>
+        <a class="btn btn-ghost" href="https://github.com/KURU77/income-tax-simulator-jp">ソース</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-top">
+        <div class="ico">📚</div>
+        <div>
+          <h3>マイ本棚</h3>
+          <p class="kicker">bookshelf_app — バーコード蔵書管理</p>
+        </div>
+      </div>
+      <p class="desc">
+        本の裏表紙の<b>バーコードをカメラでかざすだけ</b>で蔵書を登録。
+        書名・著者・出版社・表紙・ページ数を openBD → Google Books → Open Library の順に自動取得します。
+        「一人暮らし先／実家／研究室」など<b>置き場所ごとの分類</b>、表紙のグリッド表示、
+        読了・進捗の記録、買うか迷っている本の検討中リストつき。
+      </p>
+      <ul class="tags"><li>カメラ / バーコード</li><li>書誌API連携</li><li>PWA</li><li>端末内保存</li></ul>
+      <div class="actions">
+        <a class="btn btn-primary" href="https://kuru77.github.io/bookshelf_app/">アプリを開く</a>
+        <a class="btn btn-ghost" href="https://github.com/KURU77/bookshelf_app">ソース</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-top">
+        <div class="ico">⏱️</div>
+        <div>
+          <h3>今！やることリスト</h3>
+          <p class="kicker">now-todo — タスク管理</p>
+        </div>
+      </div>
+      <p class="desc">
+        「やることは分かっているのに、30分空いた瞬間に何をすればいいか思い出せない」を解消するアプリ。
+        締切と「1ページ何分 × 何ページ」の見積もりを登録しておくと、
+        <b>空き時間と気分を選ぶだけで今やるとよさそうな順に理由つきで提案</b>します。
+        空き時間へタスクを詰める自動割り当て（最早締切優先）とタイマーつき。
+      </p>
+      <ul class="tags"><li>スコアリング</li><li>スケジューリング</li><li>PWA / オフライン</li><li>端末内保存</li></ul>
+      <div class="actions">
+        <a class="btn btn-primary" href="https://kuru77.github.io/now-todo/">アプリを開く</a>
+        <a class="btn btn-ghost" href="https://github.com/KURU77/now-todo">ソース</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-top">
+        <div class="ico">🍚</div>
+        <div>
+          <h3>自炊ごはん記録</h3>
+          <p class="kicker">meal-log-app</p>
+        </div>
+      </div>
+      <p class="desc">
+        毎日の自炊を<b>写真で記録して栄養バランスをチェック</b>できるアプリ。
+        朝・昼・夕・間食ごとに撮影すると具材と栄養素を判定し、
+        <b>11種の栄養素の充足率</b>から不足を補う献立を提案します。
+        家の食材の賞味期限管理を統合していて、期限が近い在庫を使う献立が優先されます。
+      </p>
+      <ul class="tags"><li>React Native / Expo</li><li>TypeScript</li><li>Web版あり</li><li>端末内保存</li></ul>
+      <div class="actions">
+        <a class="btn btn-primary" href="https://kuru77.github.io/meal-log-app/">Web版を開く</a>
+        <a class="btn btn-ghost" href="https://github.com/KURU77/meal-log-app">ソース</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-top">
+        <div class="ico">🗺️</div>
+        <div>
+          <h3>行きたい観光地リスト</h3>
+          <p class="kicker">travel-wishlist — 公開準備中</p>
+        </div>
+      </div>
+      <p class="desc">
+        行きたい観光地や世界遺産を、<b>名称・営業時間・所在地（地図つき）</b>でリスト化するアプリ。
+        検索窓に名称を入れると、内蔵プリセット（有名な世界遺産・観光地 約90件）と
+        OpenStreetMap から住所・営業時間・公式サイト・座標が一括入力されます。
+        登録した全スポットをピンで見る地図ビューつき。
+      </p>
+      <ul class="tags"><li>Leaflet / OpenStreetMap</li><li>PWA / オフライン</li><li>端末内保存</li></ul>
+      <div class="actions">
+        <span class="btn btn-disabled">🔒 公開準備中</span>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section>
+  <div class="sec-head">
+    <h2>そのほかに作ったもの</h2>
+    <span class="count">5件</span>
+  </div>
+  <p class="sec-note">用途が限られているもの、後のアプリに統合したものなど。</p>
+
+  <ul class="list">
+    <li>
+      <span class="name"><span class="em">📝</span>QuizGen</span>
+      <span class="sub">論文や書籍の内容から選択式・記述式のクイズを自動生成するPWA。PDFのアップロードにも対応。</span>
+      <span class="lnk">
+        <a href="https://kuru77.github.io/Quizzes-based-on-book-thesis/">開く</a>
+        <a href="https://github.com/KURU77/Quizzes-based-on-book-thesis">ソース</a>
+      </span>
+    </li>
+    <li>
+      <span class="name"><span class="em">💰</span>予算管理（円・ドル）</span>
+      <span class="sub">日本円と米ドルの両方で予算・支出を管理する、渡米時の家計簿アプリ。為替レートを手動設定して両通貨で表示。</span>
+      <span class="lnk">
+        <a href="https://kuru77.github.io/Neo-Household-Expenses-For-traveling-to-U.S.A/">開く</a>
+        <a href="https://github.com/KURU77/Neo-Household-Expenses-For-traveling-to-U.S.A">ソース</a>
+      </span>
+    </li>
+    <li>
+      <span class="name"><span class="em">🧺</span>食材管理アプリ</span>
+      <span class="sub">食材の賞味期限をジャンル別に管理するPWA。現在は「自炊ごはん記録」の在庫タブに統合済み。</span>
+      <span class="lnk">
+        <a href="https://kuru77.github.io/foodnoloss/">開く</a>
+        <a href="https://github.com/KURU77/foodnoloss">ソース</a>
+      </span>
+    </li>
+    <li>
+      <span class="name"><span class="em">📋</span>日次タスク管理</span>
+      <span class="sub">毎日の繰り返しタスクの完了率を月間カレンダーで可視化するPWA。一時停止した期間は進捗率から除外。</span>
+      <span class="lnk">
+        <a href="https://kuru77.github.io/Neo-To-Do-LIST/">開く</a>
+        <a href="https://github.com/KURU77/Neo-To-Do-LIST">ソース</a>
+      </span>
+    </li>
+    <li>
+      <span class="name"><span class="em">🏔️</span>Craftvalley ホームページ</span>
+      <span class="sub">体験メニューを選んで見せる構成のサイト制作。Webアプリ以外の制作物。</span>
+      <span class="lnk">
+        <a href="https://kuru77.github.io/Craftvalley_homepage_IntegratedEdition4/">開く</a>
+        <a href="https://github.com/KURU77/Craftvalley_homepage_IntegratedEdition4">ソース</a>
+      </span>
+    </li>
+  </ul>
+</section>
+
+<section>
+  <div class="sec-head"><h2>共通していること</h2></div>
+  <div class="notes">
+    <ul>
+      <li><b>データは端末の中だけ</b> — 入力した内容はブラウザの localStorage や端末内のファイルに保存され、サーバーには送信しません。JSONでの書き出し／読み込みに対応しているものが多いです。</li>
+      <li><b>アカウント登録なし・インストール不要</b> — リンクを開けばその場で使えます。</li>
+      <li><b>スマホ前提の作り</b> — iPhone で「ホーム画面に追加」するとアプリのように全画面で使え、多くはオフラインでも動きます。入力欄で画面が勝手に拡大しないようにしてあります。</li>
+      <li><b>ビルド不要の構成が中心</b> — 多くは HTML / CSS / JavaScript だけで、フレームワークもビルドツールも使っていません（「自炊ごはん記録」だけ React Native / Expo）。</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <span>© KURU77</span>
+  <span><a href="https://github.com/KURU77">github.com/KURU77</a></span>
+</footer>
+
+</div>
+</body>
+</html>
