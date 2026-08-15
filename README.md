@@ -28,7 +28,8 @@
 | 💰 予算管理（円・ドル） | 日本円と米ドルの両方で予算・支出を管理 | [開く](https://kuru77.github.io/Neo-Household-Expenses-For-traveling-to-U.S.A/) / [repo](https://github.com/KURU77/Neo-Household-Expenses-For-traveling-to-U.S.A) |
 | 🧺 食材管理アプリ | 賞味期限をジャンル別に管理（現在は「自炊ごはん記録」に統合） | [開く](https://kuru77.github.io/foodnoloss/) / [repo](https://github.com/KURU77/foodnoloss) |
 | 📋 日次タスク管理 | 繰り返しタスクの完了率をカレンダーで可視化 | [開く](https://kuru77.github.io/Neo-To-Do-LIST/) / [repo](https://github.com/KURU77/Neo-To-Do-LIST) |
-| 🏔️ Craftvalley ホームページ | 体験メニューを選んで見せる構成のサイト | [開く](https://kuru77.github.io/Craftvalley_homepage_IntegratedEdition4/) / [repo](https://github.com/KURU77/Craftvalley_homepage_IntegratedEdition4) |
+
+> Craftvalley ホームページは、いったんポートフォリオへの掲載を見送っています。
 
 ## アプリを追加するには
 
