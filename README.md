@@ -18,10 +18,12 @@
 | 📚 マイ本棚 | バーコードをカメラで読むだけの蔵書管理。置き場所・ジャンル分類、読書進捗 | [開く](https://kuru77.github.io/bookshelf_app/) |
 | ⏱️ 今！やることリスト | 空き時間と気分から「今やるとよさそうなこと」を提案するタスク管理 | [開く](https://kuru77.github.io/now-todo/) |
 | 🍚 自炊ごはん記録 | 自炊を写真で記録して栄養バランスをチェック。在庫の賞味期限管理と献立提案つき | [開く](https://kuru77.github.io/meal-log-app/) |
-| 🗺️ 行きたい観光地リスト | 観光地・世界遺産を営業時間と地図つきでリスト化。名称を検索するだけで住所・座標が自動入力 | [開く](https://kuru77.github.io/travel-wishlist/) |
+| 🗺️ 行きたい観光地リスト | 観光地・世界遺産を営業時間と地図つきでリスト化。プリセット404件＋OpenStreetMapから自動入力、地図のオフライン保存つき | [開く](https://kuru77.github.io/travel-wishlist/) |
 | 📉 体重トレンド | 体重を2タップで記録。水分のブレをならしたトレンド線で増減を読む。体重計アプリのCSV取り込みつき | [開く](https://kuru77.github.io/weight-trend/) |
 | 📈 日本株ポートフォリオ | 保有株の取得単価・株数から株価・配当・優待をまとめて確認。口座別（NISA対応）と買い増しシミュレーションつき | [開く](https://kuru77.github.io/jp-stock-portfolio/) |
 | 🎒 教育資金贈与マネージャー | 教育資金の一括贈与の原資と使い道を記録。残りの非課税枠と、30歳満期時の贈与税・手元に残る額を計算 | [開く](https://kuru77.github.io/education-fund-gift-jp/) |
+| 📄 積読シェルフ | 読む予定の論文を優先度つきの棚に。arXiv/DOI/BibTeX から取り込み、積んでからの日数を表示 | [開く](https://kuru77.github.io/paper-shelf/) |
+| 🩺 からだ記録 | からだの異変を日付×部位で記録。人体図から部位を選び、つらさの分布を可視化 | [開く](https://kuru77.github.io/karada-log/) |
 
 ### そのほか
 
