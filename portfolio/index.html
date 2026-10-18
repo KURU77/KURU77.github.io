@@ -73,6 +73,7 @@
   .others li { padding: 7px 0; border-bottom: 1px solid var(--border); font-size: 14px; color: var(--fg-muted); }
   .others li a { font-weight: 600; text-decoration: none; margin-right: 6px; }
   .others li a:hover { text-decoration: underline; }
+  .others .more { margin: 12px 0 0; font-size: 14px; color: var(--fg-muted); }
 
   .skills { margin: 0; padding: 0; list-style: none; }
   .skills li { display: grid; grid-template-columns: 9em 1fr; gap: 12px; padding: 8px 0; border-bottom: 1px solid var(--border); }
@@ -212,7 +213,7 @@
           <dt>工夫した点</dt>
           <dd><ul>
             <li>プリセットは Wikipedia と資格情報サイトの一覧を突き合わせて作成し、合格基準・受験料は確認できた範囲だけを収録</li>
-            <li>同期データは利用者自身の Google ドライブのアプリ専用領域に保存し、サーバーを使わない構成にした</li>
+            <li>同期データは利用者自身の Google Drive のアプリ専用領域に保存し、サーバーを使わない構成にした</li>
             <li>同期がぶつかったときは資格ごとに新しいほうを採用し、削除した時刻も記録して、消したものが復活しないようにした</li>
           </ul></dd>
         </dl>
@@ -224,33 +225,25 @@
   <section class="others" aria-labelledby="h-others">
     <h2 id="h-others">その他の制作物 <span class="en">Other Works</span></h2>
 
-    <h3>研究・学習・ツール</h3>
+    <h3>研究・学習</h3>
     <ul>
-      <li><a href="https://kuru77.github.io/maker-desk/">自作デスク</a>電子工作・DIY・自作PCを作品ごとに管理。研究デスクの部品台帳と連携</li>
-      <li><a href="https://kuru77.github.io/techo-scan/">手帳スキャン</a>紙の手帳の写真から予定を読み取り（Gemini / Claude API）、.ics で書き出す</li>
+      <li><a href="https://kuru77.github.io/maker-desk/">自作デスク</a>研究ではなく暮らしのための電子工作・DIY・自作PCを、作品ごとに記録。部品は研究デスクの台帳を共用</li>
       <li><a href="https://kuru77.github.io/pdf-nup/">まとめ刷り</a>PDF を1枚に2・4・6・8ページ割り付ける。端末内だけで処理</li>
-      <li><a href="https://kuru77.github.io/drone-permit-navi/">ドローン許可ナビ</a>9つの質問に答えると、必要な許可・承認とチェックリストを表示</li>
-      <li><a href="https://kuru77.github.io/kabu-yougo-note/">株用語ノート</a>JPX用語集の605語に対応した学習アプリ。暗記カードとクイズつき</li>
+    </ul>
+
+    <h3>日常ツール</h3>
+    <ul>
       <li><a href="https://kuru77.github.io/now-todo/">今！やることリスト</a>空き時間と気分から、今やるとよいタスクを理由つきで提案</li>
       <li><a href="https://kuru77.github.io/Neo-To-Do-LIST/">日次タスク管理</a>繰り返しタスクの完了率を月間カレンダーで可視化</li>
+      <li><a href="https://kuru77.github.io/techo-scan/">手帳スキャン</a>紙の手帳の写真から予定を読み取り（Gemini / Claude API）、.ics で書き出す</li>
       <li><a href="https://kuru77.github.io/bookshelf_app/">マイ本棚</a>本のバーコードを読み取り、書誌を自動取得する蔵書管理</li>
       <li><a href="https://kuru77.github.io/watchlist/">視聴リスト</a>アニメ・映画などを4つのリストで管理。AniList・Wikidata から情報を取り込み</li>
       <li><a href="https://kuru77.github.io/barcode-wishlist/">バーコード欲しいものリスト</a>商品のJANコードをカメラで読んで登録</li>
       <li><a href="https://kuru77.github.io/travel-wishlist/">行きたい観光地リスト</a>観光地・世界遺産を営業時間と地図つきでリスト化</li>
       <li><a href="https://kuru77.github.io/sentaku-kawaki/">洗濯乾きナビ</a>室温と湿度から洗濯物の乾燥時間の目安を計算</li>
+      <li><a href="https://kuru77.github.io/drone-permit-navi/">ドローン許可ナビ</a>9つの質問に答えると、必要な許可・承認とチェックリストを表示</li>
     </ul>
-
-    <h3>暮らしの記録・計算</h3>
-    <ul>
-      <li><a href="https://kuru77.github.io/meal-log-app/">自炊ごはん記録</a>自炊を写真で記録し、栄養バランスと食材の賞味期限を管理</li>
-      <li><a href="https://kuru77.github.io/weight-trend/">体重トレンド</a>体重を記録し、日々のブレをならしたトレンド線で増減を見る</li>
-      <li><a href="https://kuru77.github.io/karada-log/">からだ記録</a>からだの異変を人体図から部位を選んで記録</li>
-      <li><a href="https://kuru77.github.io/nomi-log/">のみログ</a>毎日の飲酒の有無・量を記録し、純アルコール量を集計</li>
-      <li><a href="https://kuru77.github.io/income-tax-simulator-jp/">所得シミュレーター</a>令和元年〜8年の税制で課税額を試算</li>
-      <li><a href="https://kuru77.github.io/jp-stock-portfolio/">日本株ポートフォリオ</a>保有株の株価・配当・優待をまとめて確認</li>
-      <li><a href="https://kuru77.github.io/education-fund-gift-jp/">教育資金贈与マネージャー</a>教育資金の一括贈与の残り非課税枠などを計算</li>
-      <li><a href="https://kuru77.github.io/Neo-Household-Expenses-For-traveling-to-U.S.A/">予算管理（円・ドル）</a>日本円と米ドルの両方で予算・支出を管理</li>
-    </ul>
+    <p class="more">ほか、生活系ツール 8件（一覧は <a href="https://kuru77.github.io/">こちら</a>）</p>
   </section>
 
   <section aria-labelledby="h-skills">
