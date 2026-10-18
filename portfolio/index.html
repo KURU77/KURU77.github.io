@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>島田 築 — ポートフォリオ</title>
+<meta name="description" content="東京理科大学 先進工学部 物理工学科 3年 島田 築のポートフォリオ。研究・学習のために作ったWebアプリをまとめています。">
+<meta name="robots" content="noindex">
+<meta name="color-scheme" content="light">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%231f3a5f'/%3E%3Ctext x='50' y='68' font-size='54' text-anchor='middle' fill='white' font-family='sans-serif'%3E%E7%AF%89%3C/text%3E%3C/svg%3E">
+<style>
+  :root {
+    --bg: #ffffff;
+    --bg-subtle: #f6f7f9;
+    --fg: #1b1f24;
+    --fg-muted: #59616b;
+    --fg-faint: #8a929c;
+    --border: #e3e6ea;
+    --accent: #1f3a5f;
+    --accent-soft: #eaf0f7;
+    --radius: 12px;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic UI", "Yu Gothic", Meiryo, system-ui, sans-serif;
+    font-size: 15.5px;
+    line-height: 1.75;
+    overflow-wrap: anywhere;
+  }
+  a { color: var(--accent); text-underline-offset: 3px; }
+  code { font-family: Consolas, Menlo, "Courier New", monospace; font-size: .9em; background: var(--bg-subtle); padding: 0 4px; border-radius: 4px; }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 0 20px; }
+
+  header.top { padding: 56px 0 28px; border-bottom: 1px solid var(--border); }
+  header.top .label { font-size: 12px; letter-spacing: .14em; color: var(--fg-faint); text-transform: uppercase; margin: 0 0 10px; }
+  header.top h1 { font-size: 30px; line-height: 1.3; margin: 0; letter-spacing: .04em; }
+  header.top h1 .en { display: block; font-size: 14px; font-weight: 500; color: var(--fg-muted); letter-spacing: .06em; margin-top: 4px; }
+  header.top .aff { margin: 14px 0 0; color: var(--fg-muted); }
+
+  section { padding: 36px 0 8px; }
+  h2 { font-size: 19px; margin: 0 0 16px; display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+  h2 .en { font-size: 12px; font-weight: 500; color: var(--fg-faint); letter-spacing: .12em; text-transform: uppercase; }
+  p { margin: 0 0 10px; }
+
+  .intro p { margin: 0 0 4px; }
+
+  .style-box { border: 1px solid var(--border); border-left: 4px solid var(--accent); border-radius: 8px; padding: 16px 18px; background: var(--bg-subtle); }
+  .style-box p { margin: 0; }
+
+  .work { border: 1px solid var(--border); border-radius: var(--radius); padding: 22px; margin: 0 0 20px; display: grid; grid-template-columns: 220px 1fr; gap: 24px; align-items: start; }
+  .work .shot { margin: 0; }
+  .work .shot img { display: block; width: 100%; height: auto; border-radius: 10px; border: 1px solid var(--border); background: var(--bg-subtle); }
+  .work .shot figcaption { font-size: 11.5px; color: var(--fg-faint); margin-top: 6px; text-align: center; }
+  .work h3 { font-size: 18px; margin: 0 0 2px; }
+  .work .lead { color: var(--fg-muted); margin: 0 0 14px; }
+  .work dl { margin: 0; }
+  .work dt { font-size: 12.5px; font-weight: 700; color: var(--accent); letter-spacing: .04em; margin: 12px 0 2px; }
+  .work dt:first-child { margin-top: 0; }
+  .work dd { margin: 0; }
+  .work ul { margin: 0; padding-left: 1.2em; }
+  .work li { margin: 2px 0; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 2px 0 0; padding: 0; list-style: none; }
+  .tags li { font-size: 12.5px; background: var(--accent-soft); color: var(--accent); border-radius: 999px; padding: 1px 10px; margin: 0; }
+  .open { display: inline-block; margin-top: 16px; font-weight: 600; text-decoration: none; border: 1px solid var(--accent); border-radius: 8px; padding: 6px 14px; }
+  .open:hover { background: var(--accent); color: #fff; }
+
+  .others h3 { font-size: 13.5px; color: var(--fg-muted); margin: 18px 0 6px; font-weight: 600; }
+  .others ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0 28px; }
+  .others li { padding: 7px 0; border-bottom: 1px solid var(--border); font-size: 14px; color: var(--fg-muted); }
+  .others li a { font-weight: 600; text-decoration: none; margin-right: 6px; }
+  .others li a:hover { text-decoration: underline; }
+  .others .all { margin-top: 14px; font-size: 14px; }
+
+  .skills { margin: 0; padding: 0; list-style: none; }
+  .skills li { display: grid; grid-template-columns: 9em 1fr; gap: 12px; padding: 8px 0; border-bottom: 1px solid var(--border); }
+  .skills li span:first-child { font-weight: 600; }
+  .skills li span:last-child { color: var(--fg-muted); }
+
+  footer { padding: 36px 0 56px; }
+  .mail { font-size: 17px; font-weight: 600; }
+  .small { font-size: 12px; color: var(--fg-faint); margin-top: 32px; }
+
+  @media (max-width: 680px) {
+    body { font-size: 15px; }
+    .wrap { padding: 0 16px; }
+    header.top { padding: 36px 0 22px; }
+    header.top h1 { font-size: 26px; }
+    section { padding: 28px 0 4px; }
+    .work { grid-template-columns: 1fr; padding: 18px 16px; gap: 16px; }
+    .work .shot { max-width: 230px; margin: 0 auto; }
+    .others ul { grid-template-columns: 1fr; }
+    .skills li { grid-template-columns: 1fr; gap: 0; }
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <p class="label">Portfolio</p>
+    <h1>島田 築<span class="en">Kizuku Shimada</span></h1>
+    <p class="aff">東京理科大学 先進工学部 物理工学科 3年</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="intro" aria-labelledby="h-about">
+    <h2 id="h-about">自己紹介 <span class="en">About</span></h2>
+    <p>ブレイン・マシン・インターフェース（BMI）と触覚知覚の研究を志しています。</p>
+    <p>論文の管理や研究の段取りなど、身の回りで感じた課題を、小さなWebアプリを作って解決してきました。</p>
+  </section>
+
+  <section aria-labelledby="h-style">
+    <h2 id="h-style">開発スタイル <span class="en">How I build</span></h2>
+    <div class="style-box">
+      <p>Claude Code（AIコーディングツール）を用いて開発しています。<strong>要件定義・UI設計・動作検証・修正判断は自分で行っています。</strong></p>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-works">
+    <h2 id="h-works">主要作品 <span class="en">Selected Works</span></h2>
+
+    <article class="work">
+      <figure class="shot">
+        <img src="img/lab-desk.webp" width="780" height="1280" alt="研究デスクのホーム画面。進行中の研究数、費用の合計、近い予定の一覧" loading="lazy">
+        <figcaption>サンプルデータでの表示</figcaption>
+      </figure>
+      <div>
+        <h3>研究デスク</h3>
+        <p class="lead">研究ごとに、先行研究・費用・進捗・予定と、電子部品・工具の台帳をまとめて管理するアプリ</p>
+        <dl>
+          <dt>作った理由</dt>
+          <dd>研究の概要・文献・費用・備品・予定が別々の場所に散らばらないよう、一か所にまとめるため。</dd>
+          <dt>主な機能</dt>
+          <dd><ul>
+            <li>研究ごとに概要・先行研究とデータセット・費用・進捗・予定を管理。DOI・arXiv のURL・BibTeX を貼ると書誌を自動入力</li>
+            <li>電子部品・工具・計測器の台帳。研究で記録した費用から台帳へ自動で追加し、未使用／使用中／使用済みの数を管理</li>
+            <li>自作実験装置の仕様書・手順書。Word・PDF・LaTeX などの資料を読み取って項目に振り分ける</li>
+          </ul></dd>
+          <dt>技術</dt>
+          <dd><ul class="tags">
+            <li>HTML/CSS/JavaScript（依存ライブラリなし）</li><li>PWA</li><li>localStorage・IndexedDB</li><li>Google Drive API・OAuth</li><li>CrossRef API</li><li>pdf.js</li>
+          </ul></dd>
+          <dt>工夫した点</dt>
+          <dd><ul>
+            <li>Word（.docx）を外部ライブラリなしで読むため、ブラウザ標準の展開機能（DecompressionStream）で中身を取り出して解析</li>
+            <li>資料中の LaTeX 記法（例：<code>\SI{120}{\milli\ampere}</code> → 120 mA）をふつうの文字に変換して取り込む</li>
+            <li>端末間の同期を項目1件ずつマージし、オフライン中に別の端末で編集しても両方の変更が残るようにした</li>
+          </ul></dd>
+        </dl>
+        <a class="open" href="https://kuru77.github.io/lab-desk/">アプリを開く →</a>
+      </div>
+    </article>
+
+    <article class="work">
+      <figure class="shot">
+        <img src="img/paper-shelf.webp" width="780" height="1280" alt="積読シェルフのホーム画面。次に読む論文と、未読・読書中・読了の件数" loading="lazy">
+        <figcaption>サンプルデータでの表示</figcaption>
+      </figure>
+      <div>
+        <h3>積読シェルフ</h3>
+        <p class="lead">読む予定の論文を優先度つきの「棚」にまとめ、次に読む一本をすぐ決められるアプリ</p>
+        <dl>
+          <dt>作った理由</dt>
+          <dd>「あとで読む」論文が増えると、どれから読むかが分からなくなり、リストが役に立たなくなるため。</dd>
+          <dt>主な機能</dt>
+          <dd><ul>
+            <li>論文のURL・DOI・BibTeX・RIS・タイトルを貼るだけで書誌を自動入力</li>
+            <li>ホームに「次の一本」（読書中、なければ優先度が最も高い未読）を表示。積んでからの日数を表示し、30日を超えると色で知らせる</li>
+            <li>タイトル・著者・掲載先・タグ・メモの横断検索。JSON と BibTeX で書き出し</li>
+          </ul></dd>
+          <dt>技術</dt>
+          <dd><ul class="tags">
+            <li>HTML/CSS/JavaScript（依存ライブラリなし）</li><li>PWA</li><li>localStorage</li><li>Crossref・DataCite・OpenAlex・Semantic Scholar API</li>
+          </ul></dd>
+          <dt>工夫した点</dt>
+          <dd><ul>
+            <li>DOI・arXiv ID・PMID を取り出して複数の公開APIに順に照会し、1つで足りない項目だけを次の候補で埋める</li>
+            <li>Nature・ACL Anthology などはURLの形からDOIを組み立てる。識別子が取れないときはタイトル検索に切り替え、「確認してください」と表示</li>
+            <li>照会で送るのは識別子か検索語だけ。設定で通信なしの解析だけに切り替えられる</li>
+          </ul></dd>
+        </dl>
+        <a class="open" href="https://kuru77.github.io/paper-shelf/">アプリを開く →</a>
+      </div>
+    </article>
+
+    <article class="work">
+      <figure class="shot">
+        <img src="img/cert-tracker.webp" width="780" height="1280" alt="資格・検定トラッカーの追加画面。「ぼき」と入力すると日商簿記の候補が表示される" loading="lazy">
+        <figcaption>「ぼき」と入力したときの候補表示</figcaption>
+      </figure>
+      <div>
+        <h3>資格・検定トラッカー</h3>
+        <p class="lead">取りたい資格・検定をリスト化し、目標スコアと受験記録を管理するアプリ</p>
+        <dl>
+          <dt>作った理由</dt>
+          <dd>取りたい資格の目標と受験結果を一か所で管理し、どの資格があるのかも眺められるようにするため。</dd>
+          <dt>主な機能</dt>
+          <dd><ul>
+            <li>資格名を入力すると約1,400件のプリセットから候補を表示し、カテゴリ・目標スコア・受験料などを自動入力（かな・ローマ字でも検索可）</li>
+            <li>受験日ごとにスコアと合否を記録し、最高スコアと目標達成率を進捗バーで表示。試験日までの残り日数も表示</li>
+            <li>Google アカウントでログインすると、iPhone・iPad・PC の間でリストを同期</li>
+          </ul></dd>
+          <dt>技術</dt>
+          <dd><ul class="tags">
+            <li>HTML/CSS/JavaScript（ビルド不要）</li><li>PWA</li><li>localStorage</li><li>Google Drive API・OAuth</li>
+          </ul></dd>
+          <dt>工夫した点</dt>
+          <dd><ul>
+            <li>プリセットは Wikipedia と資格情報サイトの一覧を突き合わせて作成し、合格基準・受験料は確認できた範囲だけを収録</li>
+            <li>同期データは利用者自身の Google ドライブのアプリ専用領域に保存し、サーバーを使わない構成にした</li>
+            <li>同期がぶつかったときは資格ごとに新しいほうを採用し、削除した時刻も記録して、消したものが復活しないようにした</li>
+          </ul></dd>
+        </dl>
+        <a class="open" href="https://kuru77.github.io/cert-tracker/">アプリを開く →</a>
+      </div>
+    </article>
+  </section>
+
+  <section class="others" aria-labelledby="h-others">
+    <h2 id="h-others">その他の制作物 <span class="en">Other Works</span></h2>
+
+    <h3>研究・学習・ツール</h3>
+    <ul>
+      <li><a href="https://kuru77.github.io/maker-desk/">自作デスク</a>電子工作・DIY・自作PCを作品ごとに管理。研究デスクの部品台帳と連携</li>
+      <li><a href="https://kuru77.github.io/techo-scan/">手帳スキャン</a>紙の手帳の写真から予定を読み取り（Gemini / Claude API）、.ics で書き出す</li>
+      <li><a href="https://kuru77.github.io/pdf-nup/">まとめ刷り</a>PDF を1枚に2・4・6・8ページ割り付ける。端末内だけで処理</li>
+      <li><a href="https://kuru77.github.io/drone-permit-navi/">ドローン許可ナビ</a>9つの質問に答えると、必要な許可・承認とチェックリストを表示</li>
+      <li><a href="https://kuru77.github.io/kabu-yougo-note/">株用語ノート</a>JPX用語集の605語に対応した学習アプリ。暗記カードとクイズつき</li>
+      <li><a href="https://kuru77.github.io/now-todo/">今！やることリスト</a>空き時間と気分から、今やるとよいタスクを理由つきで提案</li>
+      <li><a href="https://kuru77.github.io/Neo-To-Do-LIST/">日次タスク管理</a>繰り返しタスクの完了率を月間カレンダーで可視化</li>
+      <li><a href="https://kuru77.github.io/bookshelf_app/">マイ本棚</a>本のバーコードを読み取り、書誌を自動取得する蔵書管理</li>
+      <li><a href="https://kuru77.github.io/watchlist/">視聴リスト</a>アニメ・映画などを4つのリストで管理。AniList・Wikidata から情報を取り込み</li>
+      <li><a href="https://kuru77.github.io/barcode-wishlist/">バーコード欲しいものリスト</a>商品のJANコードをカメラで読んで登録</li>
+      <li><a href="https://kuru77.github.io/travel-wishlist/">行きたい観光地リスト</a>観光地・世界遺産を営業時間と地図つきでリスト化</li>
+      <li><a href="https://kuru77.github.io/sentaku-kawaki/">洗濯乾きナビ</a>室温と湿度から洗濯物の乾燥時間の目安を計算</li>
+    </ul>
+
+    <h3>暮らしの記録・計算</h3>
+    <ul>
+      <li><a href="https://kuru77.github.io/meal-log-app/">自炊ごはん記録</a>自炊を写真で記録し、栄養バランスと食材の賞味期限を管理</li>
+      <li><a href="https://kuru77.github.io/weight-trend/">体重トレンド</a>体重を記録し、日々のブレをならしたトレンド線で増減を見る</li>
+      <li><a href="https://kuru77.github.io/karada-log/">からだ記録</a>からだの異変を人体図から部位を選んで記録</li>
+      <li><a href="https://kuru77.github.io/nomi-log/">のみログ</a>毎日の飲酒の有無・量を記録し、純アルコール量を集計</li>
+      <li><a href="https://kuru77.github.io/income-tax-simulator-jp/">所得シミュレーター</a>令和元年〜8年の税制で課税額を試算</li>
+      <li><a href="https://kuru77.github.io/jp-stock-portfolio/">日本株ポートフォリオ</a>保有株の株価・配当・優待をまとめて確認</li>
+      <li><a href="https://kuru77.github.io/education-fund-gift-jp/">教育資金贈与マネージャー</a>教育資金の一括贈与の残り非課税枠などを計算</li>
+      <li><a href="https://kuru77.github.io/Neo-Household-Expenses-For-traveling-to-U.S.A/">予算管理（円・ドル）</a>日本円と米ドルの両方で予算・支出を管理</li>
+    </ul>
+    <p class="all">すべての作品の一覧 → <a href="https://kuru77.github.io/">kuru77.github.io</a></p>
+  </section>
+
+  <section aria-labelledby="h-skills">
+    <h2 id="h-skills">スキル <span class="en">Skills</span></h2>
+    <ul class="skills">
+      <li><span>Python</span><span>数値計算・可視化</span></li>
+      <li><span>Web</span><span>HTML / CSS / JavaScript、PWA（オフライン対応・ホーム画面に追加）</span></li>
+      <li><span>外部API連携</span><span>CrossRef、DataCite、OpenAlex、Google Drive API など（DOI・arXiv ID からの書誌取得）</span></li>
+      <li><span>語学</span><span>TOEIC 815</span></li>
+    </ul>
+  </section>
+
+</main>
+
+<footer class="wrap" aria-labelledby="h-contact">
+  <h2 id="h-contact">連絡先 <span class="en">Contact</span></h2>
+  <p class="mail"><a href="mailto:kizuku.shimada@gmail.com">kizuku.shimada@gmail.com</a></p>
+  <p class="small">掲載アプリはすべて GitHub Pages で公開しています（GitHub: KURU77）。</p>
+</footer>
+
+</body>
+</html>
