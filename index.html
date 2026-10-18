@@ -209,7 +209,7 @@
 <section id="apps">
   <div class="sec-head">
     <h2>おもなアプリ</h2>
-    <span class="count">19件</span>
+    <span class="count">21件</span>
   </div>
   <p class="sec-note">リンクを開くとすぐに使えます（インストール不要）。</p>
 
@@ -227,7 +227,7 @@
         取りたい資格や検定をリスト化し、<b>目標スコアと受験記録</b>を管理するアプリ。
         資格名を入れると<b>約1,400件のプリセット</b>から候補が出て、カテゴリ・目標スコア・受験料・公式サイトが自動で入ります
         （「ぼき」「boki」「英検 準1」のような、かな・ローマ字入力でも引けます）。
-        達成率の進捗バーと試験日カウントダウンつき。
+        達成率の進捗バーと試験日カウントダウン、資格の更新周期の表示つき。約1,400件を21分野に分けて眺められる<b>資格ずかん</b>もあります。
       </p>
       <ul class="tags"><li>HTML/CSS/JS</li><li>PWA</li><li>端末内保存</li><li>ダークモード</li></ul>
       <div class="actions">
@@ -597,6 +597,46 @@
       </div>
     </article>
 
+    <article class="card">
+      <div class="card-top">
+        <div class="ico">👕</div>
+        <div>
+          <h3>洗濯乾きナビ</h3>
+          <p class="kicker">sentaku-kawaki</p>
+        </div>
+      </div>
+      <p class="desc">
+        <b>室温と湿度を入れるだけ</b>で、洗濯物の乾きやすさ（0〜100）と乾くまでの目安時間が出るアプリ。
+        乾く速さは空気があと何グラムの水蒸気を含めるか（飽差）にほぼ比例する、という計算にもとづいています。
+        下着からジーンズまで衣類別の目安と、扇風機・除湿機を使った場合の短縮見込み、
+        <b>部屋干し臭の注意</b>（5時間超え）つき。室温×湿度の色分けマップも見られます。
+      </p>
+      <ul class="tags"><li>HTML 1ファイル</li><li>依存ライブラリなし</li><li>PWA / オフライン</li><li>端末内保存</li></ul>
+      <div class="actions">
+        <a class="btn btn-primary" href="https://kuru77.github.io/sentaku-kawaki/">アプリを開く</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-top">
+        <div class="ico">🛠️</div>
+        <div>
+          <h3>自作デスク</h3>
+          <p class="kicker">maker-desk</p>
+        </div>
+      </div>
+      <p class="desc">
+        電子工作・スマートホーム・DIY・自作PC・3Dプリント・修理など、<b>自作したもの</b>を作品ごとに管理するアプリ。
+        仕様・部品と工具・段取り（手順と作業日）・写真つきの記録・完成後のメンテナンス周期を一か所に置けます。
+        部品は「要購入 → 注文済み → 手元にある → 取り付け済み」と進み、
+        全作品の要購入は<b>購入先ごとの買い物リスト</b>にまとまります。部品台帳は<b>研究デスクと連携</b>。
+      </p>
+      <ul class="tags"><li>HTML 1ファイル</li><li>写真は IndexedDB</li><li>Googleドライブ同期</li><li>PWA / オフライン</li></ul>
+      <div class="actions">
+        <a class="btn btn-primary" href="https://kuru77.github.io/maker-desk/">アプリを開く</a>
+      </div>
+    </article>
+
   </div>
 </section>
 
@@ -643,7 +683,8 @@
   <div class="sec-head"><h2>共通していること</h2></div>
   <div class="notes">
     <ul>
-      <li><b>データは端末の中だけ</b> — 入力した内容はブラウザの localStorage や端末内のファイルに保存され、サーバーには送信しません。JSONでの書き出し／読み込みに対応しているものが多いです。</li>
+      <li><b>データは端末の中だけ</b> — 入力した内容はブラウザの localStorage や端末内のファイルに保存され、開発者のサーバーには送信しません。JSONでの書き出し／読み込みに対応しているものが多いです。</li>
+      <li><b>端末間の同期は自分の Google ドライブへ</b> — いくつかのアプリは Google アカウントでログインすると端末間で同期できます。保存先は本人のドライブの「アプリ専用の非表示フォルダ」で、開発者のサーバーは経由せず、中身も見えません。ログインしなければ従来どおり端末内だけで完結します。</li>
       <li><b>アカウント登録なし・インストール不要</b> — リンクを開けばその場で使えます。</li>
       <li><b>スマホ前提の作り</b> — iPhone で「ホーム画面に追加」するとアプリのように全画面で使え、多くはオフラインでも動きます。入力欄で画面が勝手に拡大しないようにしてあります。</li>
       <li><b>ビルド不要の構成が中心</b> — 多くは HTML / CSS / JavaScript だけで、フレームワークもビルドツールも使っていません（「自炊ごはん記録」だけ React Native / Expo）。</li>
